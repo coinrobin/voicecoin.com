@@ -343,9 +343,8 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                                                  url :"http://api.voicecoin.com/v1/Subscription",
                                                  type:'POST',
                                                  dataType:'json',
-                                                 data:{
-                                                 "email" : $('#txt_add_whitelist').val()
-                                                 },
+                                                 data:JSON.stringify( {"email" : $('#txt_add_whitelist').val()}),
+                                                 contentType: "application/json; charset=utf-8",
                                                  success:function(data){
                                                 $('#txt_resultinfo').html("<font color='green'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>");
                                                  },
