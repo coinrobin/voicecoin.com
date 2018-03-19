@@ -258,7 +258,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                     <h2 class="wsite-content-title" style="margin-top:0px;line-height:0.5"><font color="#d5d5d5" size="6">Voice Enabled World Wide Web Over Blockchain</font></h2>
                     <h2 class="wsite-content-title">
                   
-                  <font color="#d5d5d5" style="font-weight:15"  size="6">TOKEN PRE-SALE SATRTS IN:
+                  <font color="#d5d5d5" style="font-weight:15"  size="6">TOKEN SALE SATRTS IN:
                         
                         <table style="text-align:center;margin-left:auto;margin-right:auto;max-width:600px;width:40%">
                             <tr style="font-size:45px">
@@ -269,6 +269,15 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                             </tr>
                             </table>
                         <script>
+                            window.baseLang='en';
+                            if (navigator.userLanguage) {
+                                baseLang = navigator.userLanguage.substring(0,2).toLowerCase();
+                            } else {
+                                baseLang = navigator.language.substring(0,2).toLowerCase();
+                            }
+                            if(window.baseLang != 'zh'){
+                                window.baseLang = 'en';
+                            }
                             //new Date(2018,6,1,12,23,00);
                             function setRemainTime(oDateEnd){
                                 var inter;
@@ -316,7 +325,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                             
                             
                             </script>
-                    
+                    <!--
                     <div style="text-align:center;margin-left:auto;margin-right:auto;padding-bottom:10px; padding-top:40px;font-size:25px">
                             Get whitelisted and enjoy
                             <br>
@@ -326,9 +335,51 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                             <br>
                             whitelisted.
                         </div>
-                    <div id="txt_resultinfo" style="font-size:15px" >&nbsp;</div>
+                     -->
+                    <style>
+                        .add_whitelist{
+                            display: inline-block;
+                            padding: 15px 32px;
+                            margin-top:15px;
+                            background: transparent;
+                            background-image: none !important;
+                            color: inherit;
+                            letter-spacing: 0.15em;
+                            font-family: "brandon-grotesque", sans-serif;
+                            font-size: 11px;
+                            font-weight: 700;
+                            line-height: 1;
+                            text-transform: uppercase;
+                            height:40px;
+                            background-color:#656368;
+                            
+                        }
+                    .add_whitelist:hover{
+                        background-color: #514e54;
+                    }
+                   
+                    .add_whitelist_txt{
+                        margin-top:15px;
+                        
+                        display: inline-block;
+                        background: transparent;
+                        background-image: none !important;
+                        color: inherit;
+                        padding-left:15px;
+                        letter-spacing: 0.15em;
+                        font-family: "brandon-grotesque", sans-serif;
+                        font-size: 11px;
+                        font-weight: 700;
+                        line-height: 1;
+                        height:36px;
+                        width:270px;
+                    }
+                 
+                    </style>
+                    <div id="txt_resultinfo" style="font-size:15px;padding-top:10px;padding-bottom:10px" >&nbsp;</div>
                         <div>
-                            <input id="txt_add_whitelist" type="text" style="height:50px;margin-bottom:10px;font-size:20px;width:300px" placeholder="mail address"/> <input id="btn_add_whitelist"  type="button" style="margin-bottom:10px;padding:5px;width:270px;height:50px;color:white;background-color: transparent;font-size:30px;border-radius:10px" value="Add me to whitelist"></input>
+                            <input id="txt_add_whitelist" type="text" class="add_whitelist_txt" placeholder="mail address"/>
+                            <input id="btn_add_whitelist"  type="button" class="add_whitelist" value="Add me to whitelist"></input>
                         </div>
                     </font>
                   </h2>
@@ -373,8 +424,10 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                
                </script>
                
-            
-<div class="paragraph">C<br><font color="#d5d5d5" style=""><font size="5">Register your next generation audio enabled domains on blockchain, create your voice chatbots, interact&nbsp;with the internet using your voice.</font><br><font size="6">​</font></font></div>
+                   <!--
+                        <div class="paragraph">C<br><font color="#d5d5d5" style=""><font size="5">Register your next generation audio enabled domains on blockchain, create your voice chatbots, interact&nbsp;with the internet using your voice.</font><br><font size="6">​</font></font>
+                        </div>
+                    -->
 				</div>
 			</div>
           </div>
@@ -409,8 +462,15 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
 </a>-->
 <div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;"><div class="wsite-youtube-wrapper wsite-youtube-size-medium wsite-youtube-align-center">
     <div class="wsite-youtube-container">
-        
-        <iframe src="//m.youku.com/video/id_XMzQ3MjY1NzYwNA==.html" frameborder="0" allowfullscreen=""></iframe>
+        <iframe id="iframe_voicecoin_demo" src='' frameborder="0" allowfullscreen="true"></iframe>
+        <script>
+            if(window.baseLang=="zh"){
+                $('#iframe_voicecoin_demo').attr('src','//player.youku.com/embed/XMzQ3MjY1NzYwNA');
+            }
+            else{
+                $('#iframe_voicecoin_demo').attr('src','//www.youtube.com/embed/ImI_hbceXk0?wmode=opaque');
+            }
+        </script>
     </div>
 
 <div style="display:block;font-size:90%"></div>
@@ -614,8 +674,16 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
 
 <div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;"><div class="wsite-youtube-wrapper wsite-youtube-size-medium wsite-youtube-align-left">
 <div class="wsite-youtube-container">
-
-<iframe src="//m.youku.com/video/id_XMzQ3MjY2MTI4NA==.html" frameborder="0" allowfullscreen></iframe>
+ 
+<iframe id="iframe_voicecoin_info" src='' frameborder="0" allowfullscreen="true"></iframe>
+<script>
+    if(window.baseLang == "zh"){
+        $('#iframe_voicecoin_info').attr('src','//player.youku.com/embed/XMzQ3MjY2MTI4NA');
+    }
+    else{
+        $('#iframe_voicecoin_info').attr('src','//www.youtube.com/embed/Mbfg4-hhLlA?wmode=opaque');
+    }
+    </script>
 </div>
 </div></div>
 
@@ -1508,7 +1576,7 @@ labels:"l15,u115713983.u115713983s913265258336647854"
 	<span id="eu-cookie-close">✕</span>
 </div>
 
-<!script type="text/javascript">
+<script type="text/javascript">
 	(function($) {
 		window.cookie_location = '';
 		// this cookie_content should already be pre-encoded from CookieSettingView.js
