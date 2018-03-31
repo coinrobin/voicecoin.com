@@ -19,7 +19,7 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 
 		
 		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="./VOICECOIN_files/sites.css">
@@ -116,6 +116,49 @@
 			src: url(//cdn2.editmysite.com/fonts/wSocial/wsocial.svg?buildTime=1520551046#wsocial) format('svg');
 		}
 	}
+
+
+
+
+.add_whitelist{
+    display: inline-block;
+    padding: 15px 32px;
+    margin-top:15px;
+    background: transparent;
+    background-image: none !important;
+    color: inherit;
+    letter-spacing: 0.15em;
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    height:40px;
+    background-color:#656368;
+    
+}
+.add_whitelist:hover{
+    background-color: #514e54;
+}
+
+.add_whitelist_txt{
+    margin-top:15px;
+    
+    display: inline-block;
+    background: transparent;
+    background-image: none !important;
+    color: inherit;
+    padding-left:15px;
+    letter-spacing: 0.15em;
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    height:36px;
+    width:270px;
+}
+
+
 </style>
 
 <link rel="stylesheet" type="text/css" href="./VOICECOIN_files/site_membership.css">
@@ -254,9 +297,37 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
 		<div class="wsite-section-content">
 			
           <div class="container">
+              <div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;"><div class="wsite-youtube-wrapper wsite-youtube-size-large wsite-youtube-align-center">
+                  <div class="wsite-youtube-container">
+                      
+                      <iframe id="iframe_voicecoin_info_top" src='' frameborder="0" allowfullscreen="true"></iframe>
+                      <script>
+                         
+                          window.baseLang='en';
+                          if (navigator.userLanguage) {
+                              baseLang = navigator.userLanguage.substring(0,2).toLowerCase();
+                          } else {
+                              baseLang = navigator.language.substring(0,2).toLowerCase();
+                          }
+                          if(window.baseLang != 'zh'){
+                              window.baseLang = 'en';
+                          }
+                      
+                          if(window.baseLang == "zh"){
+                              $('#iframe_voicecoin_info_top').attr('src','//player.youku.com/embed/XMzQ3MjY1NzYwNA');
+                          }
+                      else{
+                          $('#iframe_voicecoin_info_top').attr('src','//www.youtube.com/embed/ImI_hbceXk0?wmode=opaque');
+                      }
+                      </script>
+                  </div>
+              </div></div>
+
             <div class="banner" style="opacity: 1; top: 0px; transform: scale(1);">
 				<div class="wsite-section-elements"  style="margin:0px">
                     <h2 class="wsite-content-title" style="margin-top:0px;line-height:0.5"><font color="#d5d5d5" size="6">Voice Enabled World Wide Web Over Blockchain</font></h2>
+                    <div class="paragraph"><font color="#d5d5d5" size="5">Extend World Wide Web to IoT devices with blockchain<br> and artificial intelligence technologies</font></div>
+                    <!--
                     <h2 class="wsite-content-title">
                   
                   <font color="#d5d5d5" style="font-weight:15"  size="6">TOKEN SALE SATRTS IN:
@@ -270,15 +341,6 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                             </tr>
                             </table>
                         <script>
-                            window.baseLang='en';
-                            if (navigator.userLanguage) {
-                                baseLang = navigator.userLanguage.substring(0,2).toLowerCase();
-                            } else {
-                                baseLang = navigator.language.substring(0,2).toLowerCase();
-                            }
-                            if(window.baseLang != 'zh'){
-                                window.baseLang = 'en';
-                            }
                             //new Date(2018,6,1,12,23,00);
                             function setRemainTime(oDateEnd){
                                 var inter;
@@ -337,58 +399,21 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                             whitelisted.
                         </div>
                      -->
-                    <style>
-                        .add_whitelist{
-                            display: inline-block;
-                            padding: 15px 32px;
-                            margin-top:15px;
-                            background: transparent;
-                            background-image: none !important;
-                            color: inherit;
-                            letter-spacing: 0.15em;
-                            font-family: "brandon-grotesque", sans-serif;
-                            font-size: 11px;
-                            font-weight: 700;
-                            line-height: 1;
-                            text-transform: uppercase;
-                            height:40px;
-                            background-color:#656368;
-                            
-                        }
-                    .add_whitelist:hover{
-                        background-color: #514e54;
-                    }
-                   
-                    .add_whitelist_txt{
-                        margin-top:15px;
-                        
-                        display: inline-block;
-                        background: transparent;
-                        background-image: none !important;
-                        color: inherit;
-                        padding-left:15px;
-                        letter-spacing: 0.15em;
-                        font-family: "brandon-grotesque", sans-serif;
-                        font-size: 11px;
-                        font-weight: 700;
-                        line-height: 1;
-                        height:36px;
-                        width:270px;
-                    }
-                 
-                    </style>
-                    <div id="txt_resultinfo" style="font-size:15px;padding-top:10px;padding-bottom:10px" >&nbsp;</div>
+
+                    <!--
                         <div>
+                             <div id="txt_resultinfo"></div>
                             <input id="txt_add_whitelist" type="text" class="add_whitelist_txt" placeholder="mail address"/>
-                            <input id="btn_add_whitelist"  type="button" class="add_whitelist" value="Add me to whitelist"></input>
+                            <input id="btn_add_whitelist"  type="button" class="add_whitelist" value="Join Whitelist"></input>
                         </div>
                     </font>
                   </h2>
-                    
+                -->
            <script >
+                    
                
                //
-               $('#txt_add_whitelist').focus();
+             //  $('#txt_add_whitelist').focus();
                
             
            function isValidEmail(email_val){
@@ -404,7 +429,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                $('#btn_add_whitelist').on('click',function(){
                                           var email = $('#txt_add_whitelist').val();
                                           if(!isValidEmail(email)){
-                                          $('#txt_resultinfo').html("<font color='red'>Please input your valid email address.</font>");
+                                          $('#txt_resultinfo').html("<font color='red' style='font-size:15px;'  >Please input your valid email address.</font>");
                                           return false;
                                           }
                                           $.ajax({
@@ -414,10 +439,10 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
                                                  data:JSON.stringify( {"email" : $('#txt_add_whitelist').val()}),
                                                  contentType: "application/json; charset=utf-8",
                                                  success:function(data){
-                                                $('#txt_resultinfo').html("<font color='green'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>");
+                                                $('#txt_resultinfo').html("<font color='green' style='font-size:15px;'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>");
                                                  },
                                                  error:function(data){
-                                                 $('#txt_resultinfo').html("<font color='green'>Sorry,server failure,please try later.Also you can contact the site administrator and provice the following info.[api:/v1/Subscription,code:" + data.status + "]</font>");
+                                                 $('#txt_resultinfo').html("<font color='green' style='font-size:15px;' >Sorry,server failure,please try later.Also you can contact the site administrator and provice the following info.[api:/v1/Subscription,code:" + data.status + "]</font>");
                                                  //$('#txt_resultinfo').html("<font color='green'>Congratulations! we have received your application,and we will deal with it as soon as possible.</font>");
                                                  }
                                           })
@@ -445,200 +470,187 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
     <div class="main-wrap">
       <div id="wsite-content" class="wsite-elements wsite-not-footer">
 	<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="background-color: #ffffff;background-image: none;">
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:49.999999999999%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-medium " style="padding-top:5px;padding-bottom:10px;margin-left:0px;margin-right:10px;text-align:center">
-<!--<a>
-<img src="./VOICECOIN_files/voicecoin-infographic-h.jpg" alt="Picture" style="width:605;max-width:100%">
-</a>-->
-<div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;"><div class="wsite-youtube-wrapper wsite-youtube-size-medium wsite-youtube-align-center">
-    <div class="wsite-youtube-container">
-        <iframe id="iframe_voicecoin_demo" src='' frameborder="0" allowfullscreen="true"  style="width:441px"></iframe>
-        <script>
-            if(window.baseLang=="zh"){
-                $('#iframe_voicecoin_demo').attr('src','//player.youku.com/embed/XMzQ3MjY1NzYwNA');
-            }
-            else{
-                $('#iframe_voicecoin_demo').attr('src','//www.youtube.com/embed/ImI_hbceXk0?wmode=opaque');
-            }
-        </script>
+        <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="background-color: #ffffff;background-image: none;">
+            <div class="wsite-section-content">
+                <div class="container">
+                    <div class="wsite-section-elements">
+                        <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                            <table class="wsite-multicol-table">
+                                <tbody class="wsite-multicol-tbody">
+                                    <tr class="wsite-multicol-tr">
+                                        <td class="wsite-multicol-col" style="width:49.999999999999%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <div><div class="wsite-image wsite-image-border-medium " style="padding-top:5px;padding-bottom:10px;margin-left:0px;margin-right:10px;text-align:center">
+                                                <a>
+                                                    <img src="/uploads/1/1/5/7/115713983/editor/voicecoin-infographic-h.jpg?1516675633" alt="Picture" style="width:605;max-width:100%">
+                                                </a>
+                                                <div style="display:block;font-size:90%"></div>
+                                            </div></div>
+                                            
+                                            
+                                            
+                                        </td>                <td class="wsite-multicol-col" style="width:49.999999999999%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="5">Escape the screen and endless scrolling,&nbsp;get what you’re looking for by just ASKING.</font></h2>
+                                            
+                                            <div><div style="height: 20px; overflow: hidden; width: 0px;"></div>
+                                                <hr class="styled-hr" style="width:0px;">
+                                                <div style="height: 20px; overflow: hidden; width: 0px;"></div></div>
+                                            
+                                            <div class="paragraph" style="text-align:left;"><font color="#2a2a2a">&nbsp; &nbsp; &nbsp; By 2020, Morgan Stanley predicts 75 billion devices will be connected over voice enabled devices. We are going to step into the post mobile era, next generation internet is voice Internet. </font>People will talk to the computer like the way we talk to people—minus the sassiness!</div>
+                                            
+                                            
+                                            
+                                        </td>            </tr>
+                                </tbody>
+                            </table>
+                        </div></div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+</div>
+    <div class="wsite-section-wrap">
+        <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-15" style="height: auto;background-color: #f2f2f2;background-image: none;">
+            <div class="wsite-section-content">
+                <div class="container">
+                    <div class="wsite-section-elements">
+                        <h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a">Problem: Google and Amazon are privatizing voice internet</font></h2>
+                        
+                        <div class="paragraph"><font color="#2a2a2a">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A lot of companies are developing post mobile smart devices. Many companies are developing this market, and one such example are smart speaker manufacturers.&nbsp; These manufacturers require chatbot developers to register their chatbots as skill sets within the smart speakers. In this approach, chatbots must be registered on different smart speakers; therefore, chatbot developers must learn and utilize different accessing protocols to&nbsp; have their chatbot installed. Every smart device manufacturer requires the chatbot developers to register their chatbots and follow their specific standards so that the chatbots can be browsed by their end users. Traditional WWW web is going to die in voice internet, people will use less and less chance to input a domain name and URL address.&nbsp;</font></div>
+                        
+                        <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                            <table class="wsite-multicol-table">
+                                <tbody class="wsite-multicol-tbody">
+                                    <tr class="wsite-multicol-tr">
+                                        <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                                <a>
+                                                    <img src="/uploads/1/1/5/7/115713983/published/voicecoin-search.png?1521728070" alt="Picture" style="width:184;max-width:100%">
+                                                </a>
+                                                <div style="display:block;font-size:90%"></div>
+                                            </div></div>
+                                            
+                                            <h2 class="wsite-content-title"><font size="4" color="#2a2a2a">The current voice systems make it hard for users to find services</font></h2>
+                                            
+                                            
+                                            
+                                        </td>                <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                                                <a>
+                                                    <img src="/uploads/1/1/5/7/115713983/published/voicecoin-voice-variety_1.png?1521728076" alt="Picture" style="width:131;max-width:100%">
+                                                </a>
+                                                <div style="display:block;font-size:90%"></div>
+                                            </div></div>
+                                            
+                                            <h2 class="wsite-content-title"><font color="#2a2a2a" size="3">Manufacturers are not providing enough variety of voice enabled applications for current consumers</font></h2>
+                                            
+                                            
+                                            
+                                        </td>                <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                                <a>
+                                                    <img src="/uploads/1/1/5/7/115713983/published/voicecoin-lack-of-standard.png?1521728083" alt="Picture" style="width:auto;max-width:100%">
+                                                </a>
+                                                <div style="display:block;font-size:90%"></div>
+                                            </div></div>
+                                            
+                                            <h2 class="wsite-content-title"><font size="3" color="#2a2a2a">The current voice app store does not&nbsp;have common standard. So it makes it difficult for developers to create their own voice applications for these devices</font></h2>
+                                            
+                                            
+                                            
+                                        </td>            </tr>
+                                </tbody>
+                            </table>
+                        </div></div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
-
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:49.999999999999%; padding:0 15px;">
-					
-						
-
-<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="5">Escape the screen and endless scrolling,&nbsp;get what you’re looking for by just ASKING.</font></h2>
-
-<div><div style="height: 20px; overflow: hidden; width: 0px;"></div>
-<hr class="styled-hr" style="width:0px;">
-<div style="height: 20px; overflow: hidden; width: 0px;"></div></div>
-
-<div class="paragraph" style="text-align:left;"><font color="#2a2a2a">&nbsp; &nbsp; &nbsp; By 2020, Morgan Stanley predicts 75 billion devices will be connected over voice enabled devices. We are going to step into the post mobile era, next generation internet is voice Internet. </font>People will talk to the computer like the way we talk to people—minus the sassiness!</div>
-
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-			</div>
-		</div>
-      </div>
-
-	</div>
-</div>
-<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-15" style="height: auto;background-color: #f2f2f2;background-image: none;">
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a">Problem: Google and Amazon are privatizing voice internet</font></h2>
-
-<div class="paragraph"><font color="#2a2a2a">​&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A lot of companies are developing post mobile smart devices. Many companies are developing this market, and one such example are smart speaker manufacturers.&nbsp; These manufacturers require chatbot developers to register their chatbots as skill sets within the smart speakers. In this approach, chatbots must be registered on different smart speakers; therefore, chatbot developers must learn and utilize different accessing protocols to&nbsp; have their chatbot installed. Every smart device manufacturer requires the chatbot developers to register their chatbots and follow their specific standards so that the chatbots can be browsed by their end users. Traditional WWW web is going to die in voice internet, people will use less and less chance to input a domain name and URL address.&nbsp;</font></div>
-
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/11.png" alt="Picture" style="width:216;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title"><font size="4" color="#2a2a2a">The current voice systems make it hard for users to find services</font></h2>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
-<a>
-<img src="./VOICECOIN_files/asset-22-600.png" alt="Picture" style="width:195;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title"><font color="#2a2a2a" size="3">Manufacturers are not providing enough variety of voice enabled applications for current consumers</font></h2>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/asset-23-600.png" alt="Picture" style="width:194;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title"><font size="3" color="#2a2a2a">The current voice app store does not&nbsp;have common standard. So it makes it difficult for developers to create their own voice applications for these devices</font></h2>
-
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-			</div>
-		</div>
-      </div>
-
-	</div>
-</div>
-<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-19" style="height: auto;background-color: #fff;background-image: none;">
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a">We propose a blockchain solution to underpin the voice-based Internet</font></h2>
-
-<div class="paragraph"><font color="#2a2a2a">​&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Under this new system, chatbot developers will register voice domains on the blockchain, follow a set of simple instructions, and then their chatbots will be launched. In this way, any global user will be able to talk to any registered chatbot. Smart device manufacturers will no longer need to ask chatbot developers to register their chatbots. This solution preserves developer resources, while giving users a more convenient way to surf an open, voice-based internet. As traditional browser-based web sites evolve into chatbots, the traditional domain name system evolves into a decentralized voice domain system, and cryptocurrency becomes the global standard for chatbot payments.</font></div>
-
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/1.png" alt="Picture" style="width:206;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a"><font size="4"><span style="font-weight:400">People can talk to a wide variety of unique voice chatbot</span></font><font size="3" style="font-weight:400">s</font></font></h2>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/2_4.png" alt="Picture" style="width:223;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font size="4">​<span style="font-weight:400"><font color="#2a2a2a">Developers publish chatbot in one stop</font></span></font></h2>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/31.png" alt="Picture" style="width:190;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><span style="font-weight:400"><font size="4" color="#2a2a2a">A global voice chatbot economy opens up</font></span></h2>
-
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-			</div>
-		</div>
-      </div>
-
-	</div>
-</div>
+    <div class="wsite-section-wrap">
+        <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-19" style="height: auto;background-color: #fff;background-image: none;">
+            <div class="wsite-section-content">
+                <div class="container">
+                    <div class="wsite-section-elements">
+                        <h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a">We propose a blockchain solution to underpin the voice-based Internet</font></h2>
+                        
+                        <div class="paragraph"><font color="#2a2a2a">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Under this new system, chatbot developers will register voice domains on the blockchain, follow a set of simple instructions, and then their chatbots will be launched. In this way, any global user will be able to talk to any registered chatbot. Smart device manufacturers will no longer need to ask chatbot developers to register their chatbots. This solution preserves developer resources, while giving users a more convenient way to surf an open, voice-based internet. As traditional browser-based web sites evolve into chatbots, the traditional domain name system evolves into a decentralized voice domain system, and cryptocurrency becomes the global standard for chatbot payments.</font></div>
+                        
+                        <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                            <table class="wsite-multicol-table">
+                                <tbody class="wsite-multicol-tbody">
+                                    <tr class="wsite-multicol-tr">
+                                        <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                                <a>
+                                                    <img src="/uploads/1/1/5/7/115713983/published/voicecoin-variety.png?1521728090" alt="Picture" style="width:auto;max-width:100%">
+                                                </a>
+                                                <div style="display:block;font-size:90%"></div>
+                                            </div></div>
+                                            
+                                            <h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a"><font size="4"><span style="font-weight:400">People can talk to a wide variety of unique voice chatbot</span></font><font size="3" style="font-weight:400">s</font></font></h2>
+                                            
+                                            
+                                            
+                                        </td>                <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                                <a>
+                                                    <img src="/uploads/1/1/5/7/115713983/published/voicecoin-one-stop-publishing.png?1521728098" alt="Picture" style="width:138;max-width:100%">
+                                                </a>
+                                                <div style="display:block;font-size:90%"></div>
+                                            </div></div>
+                                            
+                                            <h2 class="wsite-content-title" style="text-align:center;"><font size="4"><span style="font-weight:400"><font color="#2a2a2a">Developers publish chatbot in one stop</font></span></font></h2>
+                                            
+                                            
+                                            
+                                        </td>                <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                            
+                                            
+                                            
+                                            <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                                <a>
+                                                    <img src="/uploads/1/1/5/7/115713983/published/voicecoin-global-chatbot_1.png?1521728104" alt="Picture" style="width:auto;max-width:100%">
+                                                </a>
+                                                <div style="display:block;font-size:90%"></div>
+                                            </div></div>
+                                            
+                                            <h2 class="wsite-content-title" style="text-align:center;"><span style="font-weight:400"><font size="4" color="#2a2a2a">A global voice chatbot economy opens up</font></span></h2>
+                                            
+                                            
+                                            
+                                        </td>            </tr>
+                                </tbody>
+                            </table>
+                        </div></div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
 <div class="wsite-section-wrap">
 	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-17" style="height: auto;background-color: #e5e9eb;background-image: none;">
 		<div class="wsite-section-content">
@@ -672,11 +684,11 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
 <div class="paragraph"><strong style="color:rgb(129, 129, 129)"><font size="3">​1. You can register your voice chatbot name on Voiceweb VNS and fill in chatbot URL address<br>2. You can use chatbot browser to find any chatbot by searching the chatbot name——access your favorite applications, brands and skills with just your voice<br>3. The chatbot directory will be open, decentralized, and&nbsp;interconnected for easy development and access to your own chatbot and others</font></strong></div>
 
 <h2 class="wsite-content-title"><font color="#2a2a2a" size="4">Semantic VNS Resolving</font></h2>
-
-<div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;"><div class="wsite-youtube-wrapper wsite-youtube-size-medium wsite-youtube-align-left">
+<!--wsite-youtube-size-medium---->
+<div class="wsite-youtube" style="margin-bottom:10px;margin-top:10px;"><div class="wsite-youtube-wrapper wsite-youtube-size-large wsite-youtube-align-left">
 <div class="wsite-youtube-container">
  
- <iframe id="iframe_voicecoin_info" src='' frameborder="0" allowfullscreen="true" style="width:441px"></iframe>
+ <iframe id="iframe_voicecoin_info" src='' frameborder="0" allowfullscreen="true"></iframe>
 <script>
     if(window.baseLang == "zh"){
         $('#iframe_voicecoin_info').attr('src','//player.youku.com/embed/XMzQ3MjY2MTI4NA');
@@ -701,190 +713,101 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
 	</div>
 </div>
 <div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-30" style="background-color: #fff;background-image: none;">
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a">Voiceweb Blockchain Features</font></h2>
-
-<div><div style="height: 20px; overflow: hidden; width: 0px;"></div>
-<hr class="styled-hr" style="width:0px;">
-<div style="height: 20px; overflow: hidden; width: 0px;"></div></div>
-
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/decentralized_orig.png" alt="Picture" style="width:auto;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">Decentralized Platform</font></h2>
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/trustless_orig.png" alt="Picture" style="width:auto;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="4">Trusted Support</font></h2>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/secure_orig.png" alt="Picture" style="width:auto;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">Secure Transactions</font></h2>
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/wordwide_orig.png" alt="Picture" style="width:auto;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">World Wide Communication&nbsp;</font></h2>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/synergy_orig.png" alt="Picture" style="width:auto;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">Interconnected Synergy</font></h2>
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/fast_orig.png" alt="Picture" style="width:auto;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="4">Fast Uptime</font></h2>
-
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-			</div>
-		</div>
-      </div>
-
-	</div>
-</div>
-<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-32" style="background-color: #e5e9eb;background-image: none;">
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="6">Voicecoin Allocation</font></h2>
-
-<div><div style="height: 20px; overflow: hidden; width: 0px;"></div>
-<hr class="styled-hr" style="width:0px;">
-<div style="height: 20px; overflow: hidden; width: 0px;"></div></div>
-
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:53.050193050193%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:right">
-<a>
-<img src="./VOICECOIN_files/asset-26-600_1.png" alt="Picture" style="width:397;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-
-					
-				</td>				<td class="wsite-multicol-col" style="width:46.949806949807%; padding:0 15px;">
-					
-						
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/asset-25-600.png" alt="Picture" style="width:392;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-
-					
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-			</div>
-		</div>
-      </div>
-
-	</div>
-</div>
-<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-31" style="height: auto;background-color: #769fad;background-image: none;">
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;"><font size="6">Voiceweb Eco System Economics</font></h2>
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
-<a>
-<img src="./VOICECOIN_files/eco-copy.png" alt="Picture" style="width:757;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-			</div>
-		</div>
-      </div>
-
-	</div>
-</div>
-<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-34" style="height: auto;background-color: #4d4d4d;background-image: none;">
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;">Roadmap</h2>
-
-<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a>
-<img src="./VOICECOIN_files/asset-16-400ppi_1.png" alt="Picture" style="width:auto;max-width:100%">
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-			</div>
-		</div>
-      </div>
-
-	</div>
+    <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-30" style="background-color: #fff;background-image: none;">
+        <div class="wsite-section-content">
+            <div class="container">
+                <div class="wsite-section-elements">
+                    <h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a">Voiceweb Blockchain Features</font></h2>
+                    
+                    <div><div style="height: 20px; overflow: hidden; width: 0px;"></div>
+                        <hr class="styled-hr" style="width:0px;">
+                        <div style="height: 20px; overflow: hidden; width: 0px;"></div></div>
+                    
+                    <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                        <table class="wsite-multicol-table">
+                            <tbody class="wsite-multicol-tbody">
+                                <tr class="wsite-multicol-tr">
+                                    <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                        
+                                        
+                                        
+                                        <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                            <a>
+                                                <img src="/uploads/1/1/5/7/115713983/published/voicecoin-decentralized.png?1521728296" alt="Picture" style="width:105;max-width:100%">
+                                            </a>
+                                            <div style="display:block;font-size:90%"></div>
+                                        </div></div>
+                                        
+                                        <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">Decentralized Platform</font></h2>
+                                        
+                                        <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                            <a>
+                                                <img src="/uploads/1/1/5/7/115713983/published/voicecoin-trusted-support.png?1521728122" alt="Picture" style="width:auto;max-width:100%">
+                                            </a>
+                                            <div style="display:block;font-size:90%"></div>
+                                        </div></div>
+                                        
+                                        <h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="4">Trusted Support</font></h2>
+                                        
+                                        
+                                        
+                                    </td>                <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                        
+                                        
+                                        
+                                        <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                            <a>
+                                                <img src="/uploads/1/1/5/7/115713983/published/voicecoin-secure.png?1521728128" alt="Picture" style="width:auto;max-width:100%">
+                                            </a>
+                                            <div style="display:block;font-size:90%"></div>
+                                        </div></div>
+                                        
+                                        <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">Secure Transactions</font></h2>
+                                        
+                                        <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                                            <a>
+                                                <img src="/uploads/1/1/5/7/115713983/published/voicecoin-world-wide.png?1521728248" alt="Picture" style="width:128;max-width:100%">
+                                            </a>
+                                            <div style="display:block;font-size:90%"></div>
+                                        </div></div>
+                                        
+                                        <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">World Wide Communication&nbsp;</font></h2>
+                                        
+                                        
+                                        
+                                    </td>                <td class="wsite-multicol-col" style="width:33.333333333333%; padding:0 15px;">
+                                        
+                                        
+                                        
+                                        <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                                            <a>
+                                                <img src="/uploads/1/1/5/7/115713983/published/voicecoin-interconnected-synergy.png?1521728256" alt="Picture" style="width:auto;max-width:100%">
+                                            </a>
+                                            <div style="display:block;font-size:90%"></div>
+                                        </div></div>
+                                        
+                                        <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#2a2a2a">Interconnected Synergy</font></h2>
+                                        
+                                        <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+                                            <a>
+                                                <img src="/uploads/1/1/5/7/115713983/published/voicecoin-speed.png?1521728263" alt="Picture" style="width:135;max-width:100%">
+                                            </a>
+                                            <div style="display:block;font-size:90%"></div>
+                                        </div></div>
+                                        
+                                        <h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="4">Fast Uptime</font></h2>
+                                        
+                                        
+                                        
+                                    </td>            </tr>
+                            </tbody>
+                        </table>
+                    </div></div></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </div>
 <div class="wsite-section-wrap">
 	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-13" style="height: auto;background-color: #ffffff;background-image: none;">
@@ -1336,8 +1259,8 @@ _W.setup_model_rpc({"rpc_namespace":"_W.Membership.RPC","model_namespace":"_W.Me
 						
 
 <h2 class="wsite-content-title" style="text-align:left;"><font size="4">Resources</font></h2>
-
-<div class="paragraph" style="text-align:left;">White paper<br>SAFT</div>
+<!-- /paper/voiceweb_whitepaper_cn.pdf  -->
+<div class="paragraph" style="text-align:left;"><a href="#" target="_blank"> White paper</a> <br>SAFT</div>
 
 
 					
